@@ -1,0 +1,64 @@
+<body>
+    <h5 class="bold">MigratoryData Messaging Demo</h5>
+
+    <p>This demo uses the MigratoryData Client API for JavaScript to connect to a MigratoryData server, subscribe to one or more topics, and publish messages on specific topics. It displays the real-time messages received for the subscribed topics, as well
+        as various status notifications.</p>
+
+    <blockquote>
+        <strong class="bold">Tip:</strong> &mdash; <em>Open this page from multiple browsers to connect more subscribers (and publishers)
+			and see how messages are delivered in real-time to all subscribers.</em>
+    </blockquote>
+
+    <div class="frame">
+        <div class="row">
+            <div class="column c45">
+                <h6 class="bold">Connection</h6>
+                <div class="frame">
+                    <label>Location</label><br>
+                    <input id="location" [(ngModel)]="locationValue"><br>
+                    <label>Entitlement Token</label><br>
+                    <input id="token" [(ngModel)]="tokenValue"><br>
+                    <button mat-raised-button class="button-color" id="connect" (click)="connect()">Connect</button>
+                    <button mat-raised-button class="button-color" id="disconnect" (click)="disconnect()">Disconnect</button>
+                </div>
+            </div>
+            <div class="column c45">
+                <h6 class="bold">Notifications</h6>
+                <div id="statusEvents" class="logs h135" style="font-size:60%">
+                </div>
+                <button mat-raised-button class="button-color" (click)="clearNotifications()">Clear notifications</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column c45">
+                <h6 class="bold">Subscribe</h6>
+                <div class="frame">
+                    <label>Topic</label><br>
+                    <input id="subTopic" [(ngModel)]="subscribeTopicValue"><br>
+                    <button mat-raised-button class="button-color" id="subscribe" (click)="subscribe()">Subscribe</button>
+                    <button mat-raised-button class="button-color" id="unsubscribe" (click)="unsubscribe()">Unsubscribe</button><br><br>
+                    <label>Subscriptions</label><br>
+                    <div id="subscriptions" class="logs h75" style="font-size:60%"></div>
+                </div>
+
+                <h6 class="bold">Publish</h6>
+                <div class="frame">
+                    <label>Topic</label><br><input id="pubTopic" [(ngModel)]="publishTopicValue"><br>
+                    <label>Message</label><br><textarea id="message" [(ngModel)]="messageValue"></textarea><br>
+                    <label>Reference</label><br><input id="messageRef" [(ngModel)]="referenceValue"><br>
+                    <button mat-raised-button class="button-color" id="publish" (click)="publish()">Publish</button>
+                </div>
+            </div>
+            <div class="column c45">
+                <h6 class="bold">Messages</h6>
+                <div id="messageEvents" class="logs h500" style="font-size:60%"></div>
+                <button mat-raised-button class="button-color" (click)="clearMessages()">Clear messages</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</body>

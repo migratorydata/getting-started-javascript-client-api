@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>MigratoryData WebSockets Demo</title>
+</head>
+
+<body>
+
+	<h3>MigratoryData WebSockets Demo</h3>
+
+	<hr>
+
+	<p>
+		This demo shows how to use <i>MigratoryData Client API for
+		WebSockets</i>. It has documented source code.
+	</p>
+
+	<hr>
+
+	This example uses MigratoryData Client API for WebSockets to show how to:
+
+	<ul>
+		<li>Connect to a MigratoryData server</li>
+		<li>Subscribe to a subject <i>/server/status</i></li>
+		<li>Display the real-time messages received from the MigratoryData 
+		    server for the subscribed subject
+		</li>
+		<li>Publish messages to the MigratoryData server on the subject 
+		    <i>/server/status</i> (these messages are immediately pushed 
+		    back to this client as well as to any other client subscribing 
+		    to the same subject <i>/server/status</i>)
+		</li>
+		<li>Display status notifications</li>
+	</ul>
+
+	<hr>
+
+	<div>
+		Publish Message 
+			<input type="text" value="Type your message here!" name="content" id="content_id" /> 
+			
+			<input type="button" value="Publish" name="Publish" id="publish_btn" /> 
+			
+			<p><i>You can also open this example from other browser windows to see 
+			how messages are published back by the MigratoryData server to this 
+			client as well as to all clients subscribing to /server/status.</i></p>
+	</div>
+
+	<hr>
+
+	<div>
+		Live Status Notifications: <b><span id="status">-</span></b>
+	</div>
+	
+	<br>
+
+	<div>
+		Live Messages: <b><span id="data">-</span></b>
+	</div>
+
+	<hr>
+
+	<!-- Load example -->
+	<script src="./bundle.js"></script>
+
+</body>
+</html>
+
